@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:loshical/question_screen.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:loshical/routes/router.dart';
 
-void main() {
-  runApp(const Loshical());
-}
+void main() => runApp(const ProviderScope(child: MyApp()));
 
-class Loshical extends StatelessWidget {
-  const Loshical({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: QuestionScreen(),
+    return MaterialApp.router(
+      routerConfig: router,
     );
   }
 }
